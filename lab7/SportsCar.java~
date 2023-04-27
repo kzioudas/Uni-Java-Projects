@@ -1,0 +1,14 @@
+public class SportsCar extends Vehicle
+{
+	private double luxuryRate;
+	public SportsCar(int SerialNum, String Col,double MonthlyIns,double luxuryRate) 
+	{
+		super(SerialNum,Col,MonthlyIns);
+		this.luxuryRate = luxuryRate;
+		setMonthlyIns((MonthlyIns*luxuryRate/100)+MonthlyIns);
+	}
+	public String toString()
+	{
+		return super.toString()+ ", luxury rate:"+luxuryRate;
+	}
+}

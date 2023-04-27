@@ -1,0 +1,51 @@
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.HashMap;
+
+public class LetterCount
+{
+	public static void main(String[] args){
+		HashMap<Character,Integer> myMap = new HashMap<Character,Integer>();
+		Scanner input1 = new Scanner(System.in);
+		int counter = 0;
+		System.out.println("Please enter a long string of characters and hit <ENTER>");
+		String A = input1.nextLine();
+		while(counter<A.length()){
+			char a = A.charAt(counter);
+			if(!myMap.containsKey(a)){
+				myMap.put(a,1);
+				counter ++;
+			}
+			else{
+				int number = myMap.get(a);
+				number ++;
+				myMap.put(a,number);
+				counter ++;
+			}
+		}
+		HashSet<Character> mySet = new HashSet<Character>();
+		Scanner input2 = new Scanner(System.in);
+		int i = 0;
+		System.out.println("Now enter a word and hit <ENTER>");
+		String B = input2.next();
+		while(i<B.length()){
+			char b = B.charAt(i);
+			if(!mySet.contains(b)){
+				mySet.add(b);
+				i++;
+			}
+			else{
+				i++;
+			}
+		}
+		System.out.println("The frequences of the word's letters in the string are as follows:");
+		for(char y: mySet){
+			if(myMap.containsKey(y)){
+				System.out.println(y+": "+myMap.get(y));
+			}
+			else{
+				System.out.println(y+": "+0);
+			}
+		}
+	}
+}

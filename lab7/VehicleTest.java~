@@ -1,0 +1,9 @@
+class VehicleTest
+{
+	public static void main(String args[])
+	{ 	
+		Vehicle[3] VehicleArray;
+		VehicleArray[0] = new Vehicle(1,"white",15);
+		VehicleArray[1] = new SportsCar(2,"red",20,30);
+		VehicleArray[2] = new MotorCycle(3,"black",10,10);
+	
